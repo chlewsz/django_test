@@ -193,3 +193,8 @@ def cache3(requst):
     # print(cache.get('key1'))
     cache.clear()  # 清空缓存
     return render(requst, 'booktest2/cache2.html')
+
+
+# 全文检索 + 中文分词
+def search_hero_index(request):
+    return render(request, 'booktest2/search_hero.html')

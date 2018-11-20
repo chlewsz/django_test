@@ -24,4 +24,5 @@ urlpatterns = [
     path('verify_code/', verify_code.verify_code),
     path('area/', include('area.urls', namespace='area')),
     path('tinymce/', include('tinymce.urls')),
+    path('search/', include('haystack.urls')),
 ]

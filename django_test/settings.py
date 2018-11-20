@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'booktest2',
     'area',
     'tinymce',
+    'haystack',
 ]
 
 MIDDLEWARE = [
@@ -144,12 +145,14 @@ STATICFILES_DIRS = [
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static/media/')
 
+# 富文本编辑框默认配置，可被模板中使用覆盖
 TINYMCE_DEFAULT_CONFIG = {
     'theme': 'advanced',
     'width': 600,
     'height': 400
 }
 
+# 缓存配置
 CACHES = {
     'default': {
         'BACKEND': 'redis_cache.cache.RedisCache',
@@ -157,3 +160,14 @@ CACHES = {
         'TIMEOUT': 60,
     }
 }
+
+# 添加搜索引擎
+HAYSTACK_CONNECTIONS = {
+    'default': {
+        'ENGINE': 'haystack.backends.whoosh_cn_backend.WhooshEngine',
+        'PATH': os.path.join(BASE_DIR, 'whoosh_index')
+    }
+}
+
+# 自动索引生成
+HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'

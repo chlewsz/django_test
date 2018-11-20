@@ -1,0 +1,4 @@
+{{ object.hname }}
+{{ object.hgender }}
+{{ object.hcontent }}
+{{ object.isDelete }}

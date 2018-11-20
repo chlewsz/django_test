@@ -29,4 +29,5 @@ urlpatterns = [
     path("cache1/", cache1),
     path("cache2/", cache2),
     path("cache3/", cache3),
+    path("search_hero_index/", search_hero_index),
 ]

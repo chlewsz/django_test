@@ -9,4 +9,9 @@ django 学习
 5. Pillow                5.3.0
 6. PyMySQL               0.9.2
 7. redis                 2.10.6
+8. django-haystack       2.8.1
+9. Whoosh                2.7.4 
+10. jieba                 0.39
+ 
+
 
