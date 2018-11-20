@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML转义</title>
+</head>
+<body>
+
+{# 使用|safe即关闭转义，默认使用|escape进行转义 #}
+{{ t1|safe }}
+
+{# 使用off/on来关闭/打开转义 #}
+{% autoescape on %}
+    {{ t1 }}
+{% endautoescape %}
+
+<hr>
+
+{# 字面值 #}
+{{ t2|default:'<h2>abc</h2>' }}
+<br>
+{{ t3|default:'&lt;h2&gt;abc&lt;/h2&gt;' }}
+
+</body>
+</html>

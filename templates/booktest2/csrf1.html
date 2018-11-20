@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>csrf</title>
+</head>
+<body>
+
+<form action="{% url 'booktest:csrf_test' '2' %}" method="post">
+    {# 通过csrf_token标签来处理csrf认证问题，只有POST需要处理 #}
+    {% csrf_token %}
+    <input type="text" name="name">
+    <input type="submit" value="提交">
+</form>
+
+</body>
+</html>

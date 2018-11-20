@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>英雄详情</title>
+</head>
+<body>
+
+姓名：{{ hero.hname }}
+<br>
+性别：{% if hero.hgender == 1 %}
+    男
+{% else %}
+    女
+{% endif %}
+<br>
+武功：{{ hero.hcontent }}
+<br>
+来自：《{{ hero.book.btitle }}》
+
+</body>
+</html>

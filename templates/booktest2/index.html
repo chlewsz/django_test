@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+</head>
+<body>
+<ul>
+    {% for book in list1 %}
+        <li>{{ book.btitle }} -- {{ book.bread }} -- {{ book.bcomment }}</li>
+    {% endfor %}
+
+    <hr>
+
+    {{ max_date }}
+
+    <hr>
+
+    {# 使用url进行反向解析 格式 namespace:urlpathname params1 params2...  params数量与方法一致#}
+    <a href="{% url 'booktest:show' '123' %}">显示</a>
+</ul>
+</body>
+</html>

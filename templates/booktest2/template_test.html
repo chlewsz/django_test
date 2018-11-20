@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>template</title>
+
+    <style type="text/css">
+        .odd {
+            color: red;
+        }
+
+        .even {
+            color: blue;
+        }
+
+    </style>
+</head>
+<body>
+{#{{ hero.hname }}#}
+
+<hr>
+奇数行为红色，偶数行为蓝色
+<hr>
+
+<ul>
+    {% for hero in list %}
+        <li>
+            {% if forloop.counter|divisibleby:2 %}
+                <a class="even"
+                   href="{% url 'booktest:show_hero_detail' hero.id %}">{{ forloop.counter }}:{{ hero.showname }}</a>
+            {% else %}
+                <a class="odd"
+                   href="{% url 'booktest:show_hero_detail' hero.id %}">{{ forloop.counter }}:{{ hero.showname }}</a>
+            {% endif %}
+        </li>
+    {% empty %}
+        什么也没有
+    {% endfor %}
+</ul>
+</body>
+</html>
