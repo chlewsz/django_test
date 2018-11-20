@@ -27,4 +27,6 @@ urlpatterns = [
     re_path("^csrf_(\d+)$", csrf_test, name='csrf_test'),
     re_path("^hero_list/(\d*)/?$", hero_list),
     path("cache1/", cache1),
+    path("cache2/", cache2),
+    path("cache3/", cache3),
 ]

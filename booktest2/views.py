@@ -4,6 +4,7 @@ from django.db.models import Max, F, Q
 from django.http import HttpResponse, HttpResponseRedirect
 from django.core.paginator import *
 from django.views.decorators.cache import cache_page
+from django.core.cache import cache
 
 
 def index(request):
@@ -173,8 +174,22 @@ def hero_list(request, pindex):
     return render(request, 'booktest2/hero_list.html', context)
 
 
-# 缓存
+# 缓存视图
 @cache_page(60)
 def cache1(request):
     print("使用cache")
     return HttpResponse('hello1')
+
+
+# 缓存模板
+def cache2(request):
+    print("使用cache")
+    return render(request, 'booktest2/cache2.html')
+
+
+# 自定义缓存数据
+def cache3(requst):
+    # cache.set('key1', 'value1', 600)
+    # print(cache.get('key1'))
+    cache.clear()  # 清空缓存
+    return render(requst, 'booktest2/cache2.html')

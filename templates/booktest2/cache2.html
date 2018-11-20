@@ -1,0 +1,15 @@
+{% load cache %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>缓存模板</title>
+</head>
+<body>
+
+{% cache 60 hello %}
+hello1
+{% endcache %}
+
+</body>
+</html>
