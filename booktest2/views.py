@@ -5,6 +5,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.core.paginator import *
 from django.views.decorators.cache import cache_page
 from django.core.cache import cache
+from . import task
 
 
 def index(request):
@@ -198,3 +199,10 @@ def cache3(requst):
 # 全文检索 + 中文分词
 def search_hero_index(request):
     return render(request, 'booktest2/search_hero.html')
+
+
+# celery
+def celery_index(request):
+    # task.show()
+    task.show.delay()
+    return HttpResponse("ok")

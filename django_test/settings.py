@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'area',
     'tinymce',
     'haystack',
+    'djcelery',
 ]
 
 MIDDLEWARE = [
@@ -171,3 +172,8 @@ HAYSTACK_CONNECTIONS = {
 
 # 自动索引生成
 HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'
+
+import djcelery
+djcelery.setup_loader()
+BROKER_URL = 'redis://127.0.0.1:6379/0'
+CELERY_IMPORTS = ('booktest2.task')

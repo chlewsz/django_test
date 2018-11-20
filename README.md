@@ -12,6 +12,9 @@ django 学习
 8. django-haystack       2.8.1
 9. Whoosh                2.7.4 
 10. jieba                 0.39
+11. celery                3.1.26.post2
+12. celery-with-redis     3.0
+13. django-celery         3.2.2
  
 
 
