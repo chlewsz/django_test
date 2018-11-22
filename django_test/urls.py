@@ -19,7 +19,7 @@ from verifycode import verify_code
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # path('', include('booktest.urls')),
+    path('', include('booktest.urls')),
     path('booktest/', include('booktest2.urls', namespace='booktest')),
     path('verify_code/', verify_code.verify_code),
     path('area/', include('area.urls', namespace='area')),
